@@ -1,0 +1,80 @@
+body {
+  font-family: 'Nekst';
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 32px;
+  align-items: center;
+  max-width: 90%;
+  h1 {
+    color: #111111;
+    font-size: 54px;
+    font-weight: 900;
+    margin-bottom: 32px;
+    grid-column: 1/3;
+  }
+  .isFirst {
+    grid-column-start: 1;
+  }
+}
+
+button {
+  font-family: 'Nekst';
+  font-weight: 900;
+  font-size: 30px;
+  color: #ffff;
+  background-color: #ff9514;
+  border: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 40px;
+  transition: all 0.2s linear;
+  &:hover {
+    background-color: #111111;
+  }
+  &:active {
+    background-color: #575757;
+  }
+  &:disabled {
+    opacity: 0.4;
+    &:hover {
+      background-color: #ff9514;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    form {
+      grid-column: 1/-1;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      font-size: 34px;
+      margin-bottom: 32px;
+    }
+  }
+  button {
+    font-size: 22px;
+    align-self: center;
+  }
+}

@@ -1,0 +1,32 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  span {
+    font-family: 'Gilroy';
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  h3 {
+    font-weight: 900;
+    font-size: 54px;
+    color: #575757;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .result {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 320px) {
+  .result {
+    margin-bottom: 30px;
+    span {
+      font-size: 14px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+  }
+}

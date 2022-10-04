@@ -1,0 +1,109 @@
+form {
+  margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  color: #575757;
+  position: relative;
+  label {
+    font-family: 'Gilroy';
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .basic {
+    padding: 16px 24px;
+    font-size: 30px;
+    font-weight: 900;
+    border-radius: 16px;
+    color: #575757;
+    background-color: #f3f3f4;
+    width: 100%;
+    &:focus {
+      background-color: #fff;
+      border: 2px solid #f3f3f4;
+    }
+  }
+  div {
+    position: absolute;
+    right: 16px;
+    &.unit {
+      font-size: 30px;
+      font-weight: 900;
+      top: 62px;
+    }
+  }
+  .inputValue {
+    position: absolute;
+    right: 16px;
+    padding: 15px 17px;
+    background-color: #ebebec;
+    color: #575757;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 16px;
+    top: 52px;
+    width: 80px;
+  }
+}
+
+input {
+  outline: none;
+  border: none;
+  &[type='range'] {
+    -webkit-appearance: none;
+    background: #e1e1e1;
+    border-radius: 2px;
+    height: 2px;
+    width: 90%;
+    align-self: center;
+    margin-top: -2px;
+    z-index: 9999;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: #ff9514;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    //mozilla
+    &::-moz-range-track {
+      -moz-appearance: none;
+      background: #e1e1e1;
+      border-radius: 2px;
+      height: 2px;
+      width: 90%;
+      align-self: center;
+      z-index: 9999;
+    }
+    &::-moz-range-thumb {
+      -moz-appearance: none;
+      background: #ff9514;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  form {
+    margin-bottom: 16px;
+    label {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .basic {
+      font-size: 22px;
+    }
+    div {
+      &.unit {
+        font-size: 22px;
+        top: 43px;
+      }
+    }
+    .inputValue {
+      top: 30px;
+    }
+  }
+}
