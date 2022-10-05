@@ -24,11 +24,12 @@ function App() {
   const sendRequest = async () => {
     setLoadind(true);
     const requestBody = {
-      carCost: carCost,
-      rate: rate,
-      leaseTerm: leaseTerm,
-      initialCost: initialCost,
-      paymentPerMounth: paymentPerMounth,
+      car_coast: Number(carCost.replace(/\s+/g, '')),
+      initail_payment: initialCost,
+      initail_payment_percent: Number(rate),
+      lease_term: Number(leaseTerm),
+      total_sum: costOfLease,
+      monthly_payment_from: paymentPerMounth,
     };
 
     axios
@@ -38,7 +39,7 @@ function App() {
         },
         body: JSON.stringify({ ...requestBody }),
       })
-      .finally((res) => {
+      .then((res) => {
         alert('Ваш запрос отправлен!');
         setLoadind(false);
         console.log(res);
